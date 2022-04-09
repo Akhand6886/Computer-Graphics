@@ -1,0 +1,33 @@
+
+
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <GL/glut.h>
+#include<cstring>
+#include<cstdio>
+#include<cmath>
+#include<iostream>
+
+
+#define SPACE 32
+#define ESC 27
+
+
+int main(int argc, char**argv){
+    glutInit(&argc, argv); 
+    glutInitDisplayMode(GLUT_RGB); 
+
+    glutInitWindowPosition(200, 100); 
+    glutInitWindowSize(500,500); 
+
+    glutCreateWindow("Computer Graphic Lab Exp_3");
+    
+    glutDisplayFunc(display);
+    
+    glutReshapeFunc(reshape);
+    glutKeyboardFunc(keyPress);
+    glutMouseFunc(mouseClick);
+    init();
+    glutMainLoop();
+    
+

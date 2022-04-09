@@ -1,0 +1,42 @@
+// keyprees reset and exit code
+int vertex=1;
+
+void keyPress(unsigned char key, int x, int y){
+  if(key==SPACE){
+   x_pos1=0;
+    y_pos1=0;
+    x_pos2=0;
+    y_pos2=0;
+    vertex=1;
+    glutPostRedisplay();
+  }
+  else if(key==ESC){
+    //exit(0);
+    glutDestroyWindow(1);
+  }
+}
+
+
+
+void mouseClick(int button,int state,int x, int y){
+  x=(x-942)*20/1885;
+  y=(478-y)*20/957;
+  
+  if(button == GLUT_LEFT_BUTTON){
+      if(vertex==1){
+        x_pos1=(float)x;
+        y_pos1=(float)y;
+        vertex++;
+      }
+      else if(vertex==2){
+        x_pos2=(float)x;
+        y_pos2=(float)y;
+    }
+    m = (y_pos2-y_pos1)/(x_pos2-x_pos1);
+    glutPostRedisplay();
+  }
+  else if(button == GLUT_RIGHT_BUTTON){
+    
+  }
+
+}

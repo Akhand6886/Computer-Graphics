@@ -1,0 +1,26 @@
+
+void printName()
+{
+    //for printing name
+    std::string s = "Akhand Pratap Singh\n";
+    glRasterPos2f(6, 8);
+    int n = s.size();
+    for (int i = 0; i < n; i++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s[i]);
+    glEnd();
+    glFlush();
+    glutSwapBuffers();
+}
+
+void printSap(){
+    std::string t="SAP ID: 500085043";
+    glRasterPos2f(6,7);
+    int o=t.size();
+    for (int i = 0; i < o; i++){
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,t[i]);
+    }
+    glEnd();
+    glFlush();
+    glutSwapBuffers();
+
+}
